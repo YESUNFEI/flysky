@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>面试算法</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		function checkPalindrom(str){//判断一个单词 是否回文
+			return str == str.split("").reverse().join("");
+		}
+		console.log(checkPalindrom("abcdcba"));
+
+		let unique = function(arr){//整形数组去重
+			let hashTable = {};
+			let data = [];
+			for(let i = 0; i<arr.length;i++){
+				if(!hashTable[arr[i]]){
+					hashTable[arr[i]] = true;
+					data.push(arr[i]);
+				}
+			}
+			return data
+		}
+
+		var array = [1,13,24,11,56,54,11,13,1];
+		console.log(unique(array));
+
+		function findMaxDuplicateChar(str){//找出字符串中重复次数最多的字符，并统计次数
+			if(str.length == 1){
+				return str;
+			}
+			let charObj = {};
+			for(let i=0;i<str.length;i++){
+				if(!charObj[str.charAt(i)]){
+					charObj[str.charAt(i)] = 1;
+				}else{
+					charObj[str.charAt(i)] += 1;
+				}
+			}
+			let maxChar = "",maxValue = 1;
+			for(var k in charObj){
+				if(charObj[k]>=maxValue){
+					maxChar = k;
+					maxValue = charObj[k];
+				}
+			}
+			return maxValue;
+		}
+		console.log(findMaxDuplicateChar("aaaaaaaadfsaaadfaseerasdfas"));
+
+		function quickSort(arr){//快排
+			if(arr.length <= 1){
+				return arr;
+			}
+			let left = [],right = [],cat = arr[0];
+			for(let i=1;i<arr.length;i++){
+				if(arr[i]<cat){
+					left.push(arr[i]);
+				}else{
+					right.push(arr[i]);
+				}
+			}
+			return quickSort(left).concat([cat],quickSort(right));
+		}
+		console.log(quickSort(array));
+	</script>
+</body>
+</html>
