@@ -1,0 +1,30 @@
+$color-bg: #f2f2f2;
+$color-title: #333;
+$color-p: #333;
+$color-main: #1e91fc;
+
+
+/* mixin *********************************/
+@mixin fill-all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+};
+
+/* 自动换行之不换也得换 */
+@mixin auto-wrap {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: all;
+  // overflow-x: auto; // firefox对连续的英文数字没办法
+}
+
+/* 水平垂直居中 */
+@mixin layout-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0)
+}
