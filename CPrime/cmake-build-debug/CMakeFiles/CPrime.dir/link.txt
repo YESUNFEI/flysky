@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/CPrime.dir/main.cpp.o CMakeFiles/CPrime.dir/SqList.cpp.o CMakeFiles/CPrime.dir/linkList.cpp.o  -o CPrime 
